@@ -1,20 +1,9 @@
 import { auth } from "@/auth";
 import { SignInButton } from "@/components/sign-in-button";
 import { SignOutButton } from "@/components/sign-out-button";
-import { getUser } from "@/db/query/get-user";
-import { users } from "@/db/schema";
 
 export default async function Home() {
   const session = await auth();
-  let user: typeof users.$inferSelect | null = null;
-
-  if (session?.user?.id) {
-    try {
-      user = await getUser(session.user.id);
-    } catch (error) {
-      console.error("Error fetching user:", error);
-    }
-  }
 
   return (
     <main className="h-screen w-screen">

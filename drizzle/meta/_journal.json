@@ -8,6 +8,13 @@
       "when": 1724489971657,
       "tag": "0000_minor_blackheart",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1724490873717,
+      "tag": "0001_cheerful_spitfire",
+      "breakpoints": true
     }
   ]
 }
