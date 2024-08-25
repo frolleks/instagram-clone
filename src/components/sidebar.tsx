@@ -5,8 +5,7 @@ import { SidebarItem } from "./sidebar-item";
 import { type Session } from "next-auth";
 import { SignInButton } from "./sign-in-button";
 import { SignOutButton } from "./sign-out-button";
-import { Button } from "./ui/button";
-import { Icon } from "./iconify-icon";
+import { CreateButton } from "./create-button";
 
 export function Sidebar({
   session,
@@ -58,14 +57,7 @@ export function Sidebar({
               {item.label}
             </SidebarItem>
           ))}
-          <Button
-            className="justify-start gap-3 w-full"
-            variant="ghost"
-            size="sm"
-          >
-            <Icon icon="fluent:add-square-24-regular" fontSize={22} />
-            Create
-          </Button>
+          <CreateButton />
         </div>
         <div className="flex-shrink-0 mt-auto">
           {session ? <SignOutButton /> : <SignInButton />}
