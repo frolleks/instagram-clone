@@ -46,7 +46,7 @@ export function UploadForm({
       method: "POST",
       body: JSON.stringify({
         caption: values.caption,
-        imageUrl: `${window.location.protocol}//${window.location.hostname}/cdn/image/${objectKey}`,
+        imageKey: `${objectKey}`,
       }),
       headers: {
         "Content-Type": "application/json",

@@ -3,7 +3,7 @@ import { db } from "@/db";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
-  const { caption, imageUrl } = await req.json();
+  const { caption, imageKey } = await req.json();
   const session = await auth();
 
   if (!session || !session.user?.id) {
@@ -19,7 +19,7 @@ export async function POST(req: Request) {
     data: {
       authorId: session.user.id,
       caption,
-      imageUrl,
+      imageKey,
     },
   });
 
